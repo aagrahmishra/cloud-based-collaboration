@@ -1,22 +1,14 @@
 import "quill/dist/quill.snow.css";
-
-import { ImageIcon, Smile, XIcon } from "lucide-react";
 import Quill, { QuillOptions } from "quill";
 import { Delta, Op } from "quill/core";
 import {
   MutableRefObject,
   useEffect,
   useLayoutEffect,
-  useMemo,
   useRef,
   useState,
 } from "react";
-import { MdSend } from "react-icons/md";
-import { PiTextAa } from "react-icons/pi";
-
 import { cn } from "@/lib/utils";
-import Image from "next/image";
-import { Hint } from "./Hint";
 import { Button } from "./ui/button";
 
 type EditorValue = {
@@ -43,8 +35,8 @@ const Editor = ({
   onCancel,
   onSubmit,
 }: EditorProps) => {
-  const [text, setText] = useState("");
-  const [isToolbarVisible, setIsToolbarVisible] = useState(true);
+  const [_text, setText] = useState("");
+  const [_isToolbarVisible, setIsToolbarVisible] = useState(true);
 
   const containerRef = useRef<HTMLDivElement>(null);
   const onSubmitRef = useRef(onSubmit);
