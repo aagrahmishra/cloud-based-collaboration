@@ -75,7 +75,7 @@ const Editor = ({
       container.ownerDocument.createElement("div")
     );
 
-    const options: QuillOptions = {
+   const options: QuillOptions = {
       theme: "snow",
       placeholder: placeholderRef.current,
       modules: {
@@ -99,7 +99,7 @@ const Editor = ({
                 const text = quill.getText();
                 const addedImage = imageElementRef.current?.files?.[0] || null;
                 const isEmpty =
-                  !addedImage && text.replace("/s*/g", "").trim().length === 0;
+                  !addedImage && text.replace("/s*/g", "").trim().length === 0; 
 
                 if (isEmpty) return;
 
@@ -118,7 +118,7 @@ const Editor = ({
           },
         },
       },
-    };
+    }; 
 
     const quill = new Quill(editorContainer, options);
     quillRef.current = quill;
@@ -203,7 +203,7 @@ const Editor = ({
           </div>
         )}
         <div className="flex px-2 pb-2 z-[5]">
-          <Hint
+         {/* <Hint
             label={isToolbarVisible ? "Hide formatting" : "Show formatting"}
           >
             <Button
@@ -215,11 +215,13 @@ const Editor = ({
               <PiTextAa className="size-4" />
             </Button>
           </Hint>
-          <EmojiPopover onEmojiSelect={handleEmojiSelect}>
+        
+         <EmojiPopover onEmojiSelect={handleEmojiSelect}>
             <Button disabled={disabled} size="sm" variant="ghost">
               <Smile className="size-4" />
             </Button>
-          </EmojiPopover>
+          </EmojiPopover> 
+        
           {variant === "create" && (
             <Hint label="Image">
               <Button
@@ -230,8 +232,8 @@ const Editor = ({
               >
                 <ImageIcon className="size-4" />
               </Button>
-            </Hint>
-          )}
+            </Hint> 
+          )} */}
           {variant === "update" && (
             <div className="ml-auto flex items-center gap-x-2">
               <Button
